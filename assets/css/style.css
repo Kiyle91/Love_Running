@@ -267,39 +267,30 @@ main {
 
 
 @media screen and (min-width: 1200px) {
+
+    /* Reasons section */
     #benefits {
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
     }
 
-    /* Force the image into the middle without changing HTML */
-    #benefits-physical { order: 1; }
-    #benefits-image { order: 2; }
-    #benefits-mental { order: 3; }
-
-    /* Equal widths */
-    #benefits-physical,
-    #benefits-image,
-    #benefits-mental {
+    #benefits > div {
         flex: 1;
     }
 
-    /* Make the side columns sit closest to the circle */
-    #benefits-physical {
-        align-items: flex-end;
-        text-align: right;
+    #benefits-image {
+        order: 0;
     }
 
     #benefits-mental {
-        align-items: flex-start;
-        text-align: left;
+        order: 1;
     }
 
-    /* Let the text blocks use the column width nicely */
-    #benefits-physical > div,
     #benefits-mental > div {
-        width: 100%;
+        align-self: flex-start;
+    }
+
+    #benefits-physical > div {
+        align-self: flex-end;
     }
 }
