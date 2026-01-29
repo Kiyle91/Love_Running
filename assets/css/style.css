@@ -237,6 +237,23 @@ main {
         width: 300px;
         right: 50px;
     }
+
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
+    }
+
+    #benefits-mental>div {
+        text-align: end;
+        align-self: flex-end;
+    }
 }
 
 /* Large Devices (Laptops and Desktops 992px and up) */
@@ -246,4 +263,43 @@ main {
     }
 
 
+}
+
+
+@media screen and (min-width: 1200px) {
+    #benefits {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Force the image into the middle without changing HTML */
+    #benefits-physical { order: 1; }
+    #benefits-image { order: 2; }
+    #benefits-mental { order: 3; }
+
+    /* Equal widths */
+    #benefits-physical,
+    #benefits-image,
+    #benefits-mental {
+        flex: 1;
+    }
+
+    /* Make the side columns sit closest to the circle */
+    #benefits-physical {
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    #benefits-mental {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    /* Let the text blocks use the column width nicely */
+    #benefits-physical > div,
+    #benefits-mental > div {
+        width: 100%;
+    }
 }
